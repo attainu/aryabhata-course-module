@@ -167,20 +167,27 @@ json-server --watch db.json --port 8900
 
 
 //////////////
-/******GetAllUser*****/
-(GET)> http://localhost:5000/api/auth/users
-
-/******Register*****/
-(POST)> http://localhost:5000/api/auth/register
-(body) => {"name":"Aakash", "email":"aa@gmail.com","password":"12345678","role":"user?"}
 
 
-/******Login*****/
-(POST) => http://localhost:5000/api/auth/login
-(body)  => {"email":"aa@gmail.com","password":"12345678"}
-(response)=> {auth:true,token:'dgsdg'}
+function dbQuery(table){
+    var out = `Select * from ${table}`
+}
 
-/******UserInfo*****/
-(GET) => http://localhost:5000/api/auth/userinfo
-(Header) => {'x-access-token':'token value from login'}
-(response) => {userinfo}
+
+dbQuery('Student')
+
+npm i redux react-redux prop-types redux-logger
+
+
+you can develop application without redux
+but redux help to manage application more better
+
+
+>>>>
+from Home line no 9 we are calling action(actions/actionfile)  with help of proptypes
+action will send data to the (reducer/movies_reducer) now
+reducer is connected to the store on line 5(store/storefile)
+store will pass data to index with the help of provider on line8,9 (index.js)
+now component will recive state from store in (container/home)
+with help to mapStateToProps on line 27-31
+here data is recived and use as a props and pass to display component on line 17 (container/home)

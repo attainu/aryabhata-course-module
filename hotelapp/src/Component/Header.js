@@ -67,7 +67,6 @@ class Header extends Component {
             .then(response => response.json())
             .then((data) => {
                 console.log(data)
-
                 sessionStorage.setItem('username',data.login)
                 this.setState({username:data.login})
             })

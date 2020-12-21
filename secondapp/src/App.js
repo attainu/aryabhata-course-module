@@ -1,25 +1,54 @@
 import logo from './logo.svg';
 import './App.css';
+import StockList from './stocklits'
+import UserList from './userlist';
+import HOC from './HOC';
+
+var StockData = [
+  {
+    id: 1,
+    name: 'TCS'
+      
+  },
+  {
+      id: 2,
+      name: 'Infosys'
+  },
+  {
+      id: 3,
+      name: 'Reliance'
+  }
+]
+
+var UserData = [
+  {
+    id: 1,
+    name: 'Krunal'
+      
+  },
+  {
+      id: 2,
+      name: 'Ankit'
+  },
+  {
+      id: 3,
+      name: 'Rushabh'
+  }
+]
+
+const Stock = HOC(StockList,StockData);
+const User = HOC(UserList,UserData);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Stock/>
+      <User/>
     </div>
   );
 }
 
 export default App;
+
+//Hoc take component as a parameter and return component
+//component that return component
