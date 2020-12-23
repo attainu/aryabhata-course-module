@@ -191,3 +191,6 @@ store will pass data to index with the help of provider on line8,9 (index.js)
 now component will recive state from store in (container/home)
 with help to mapStateToProps on line 27-31
 here data is recived and use as a props and pass to display component on line 17 (container/home)
+
+
+npm i redux react-redux redux-logger prop-types redux-promise react-router-dom 
