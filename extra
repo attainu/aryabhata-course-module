@@ -194,3 +194,19 @@ here data is recived and use as a props and pass to display component on line 17
 
 
 npm i redux react-redux redux-logger prop-types redux-promise react-router-dom 
+
+
+GET https://youtube.googleapis.com/youtube/v3/videos?part=snippet&myRating=like&key=AIzaSyBxv-0YitTZAO4BbsLhqE1bIfVR9r0f_kk
+
+https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyBxv-0YitTZAO4BbsLhqE1bIfVR9r0f_kk&chart=mostPopular&maxResults=30
+
+
+GET https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&myRating=like&key=AIzaSyBxv-0YitTZAO4BbsLhqE1bIfVR9r0f_kk
+
+Authorization: Bearer [YOUR_ACCESS_TOKEN]
+Accept: application/json
+
+
+https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDnR-ua29Z4UULwEai8W4vgYg1hkvTCcaM&maxResults=10&q=diljet
+
+https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=cl0a3i2wFcc&key=AIzaSyDnR-ua29Z4UULwEai8W4vgYg1hkvTCcaM

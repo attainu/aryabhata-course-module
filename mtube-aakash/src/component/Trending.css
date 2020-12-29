@@ -1,0 +1,61 @@
+.trendingContainer{
+    margin-left:115px;
+    margin-top:50px
+}
+
+.trendingHeading{
+    text-align: left;
+    color: #192f60;
+    font-size:30px;
+    line-height: 1.5;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.trendingSubHeading{
+    text-align: left;
+    color: gray;
+    line-height: .01;
+    letter-spacing: normal;
+    font-size:18px;
+    font-weight: normal;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.tileContainer{
+    box-shadow: 10px 10px 10px black;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width:300px;
+    height:250px;
+    background-color: white;
+    display: inline-block;
+    
+}
+
+.tileComponent1{
+    height:150px
+}
+
+.tileComponent2{
+    height:100px;
+    overflow: hidden;
+    background:rgb(68, 67, 67);
+    color:white
+}
+
+
+.componentHeading{
+    text-align: left;
+    color:#192f60;
+    font-size:18px;
+    font-weight: bold;
+
+}
+
+.componentSubHeading{
+    text-align: left;
+    color:gray;
+    font-size:14px
+}
