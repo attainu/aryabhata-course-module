@@ -5,8 +5,8 @@
 
 .trendingHeading{
     text-align: left;
-    color: #192f60;
-    font-size:30px;
+    color: #000;
+    font-size:40px;
     line-height: 1.5;
     font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -42,12 +42,14 @@
     height:100px;
     overflow: hidden;
     background:rgb(68, 67, 67);
-    color:white
+    color:#ffffff;
+    font-size:14px;
+    text-align: center;
 }
 
 
 .componentHeading{
-    text-align: left;
+    text-align: center;
     color:#192f60;
     font-size:18px;
     font-weight: bold;
@@ -55,7 +57,7 @@
 }
 
 .componentSubHeading{
-    text-align: left;
-    color:gray;
-    font-size:14px
+    text-align: center;
+    color:white;
+    font-size:10px
 }

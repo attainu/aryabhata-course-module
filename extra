@@ -210,3 +210,14 @@ Accept: application/json
 https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDnR-ua29Z4UULwEai8W4vgYg1hkvTCcaM&maxResults=10&q=diljet
 
 https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=cl0a3i2wFcc&key=AIzaSyDnR-ua29Z4UULwEai8W4vgYg1hkvTCcaM
+
+
+https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4&maxResults=10&q=sachin
+
+https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=tMbRu3YkmJo&key=AIzaSyBYi8bOgYIs-97er6A7iTsfU-oWn6aazUQ
+
+///comment of video on basis of video id
+https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=2lfETGiIDf8&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxo
+
+///on basis of id 
+https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=2lfETGiIDf8&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok
