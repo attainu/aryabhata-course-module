@@ -221,3 +221,14 @@ https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoI
 
 ///on basis of id 
 https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=2lfETGiIDf8&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok
+
+
+GET https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4 HTTP/1.1
+
+
+https://youtube.googleapis.com/youtube/v3/playlists?
+        part=snippet,contentDetails
+        &channelId=UCZRdNleCgW-BGUJf-bbjzQg&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4
+
+Authorization: Bearer [YOUR_ACCESS_TOKEN]
+Accept: application/json

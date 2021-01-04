@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 const HomeDisplay = (props) => {
     const renderVideos =({sVideo}) => {
+        console.log("sVideo>>>>",sVideo)
         if(sVideo){
             return sVideo.items.map((data) => {
                 return(

@@ -1,5 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Login from './LoginComponent';
+
 const TopNav = () => {
     return(
         <nav class="navbar navbar-inverse">
@@ -14,7 +16,7 @@ const TopNav = () => {
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login with G</a></li>
+                <Login/>
             </ul>
             </div>
         </div>
