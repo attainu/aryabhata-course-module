@@ -1,5 +1,5 @@
 const base_url = "https://www.googleapis.com/youtube/v3";
-const Api_key= "AIzaSyC6-CoGH7UYMUCCpsb_Bm-aG9F6du09MkQ"
+const Api_key= ""
 
 export function LatestVideo(){
     const output = fetch(`${base_url}/search?part=snippet&key=${Api_key}&chart=mostPopular&maxResults=30`,{method:'GET'})
