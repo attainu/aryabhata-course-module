@@ -44,7 +44,7 @@ class PlayList extends Component{
                 title: this.state.title
             }
         } 
-        var url = `https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4`
+        var url = `https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=`
         fetch(url,{
                     method:'POST',
                     headers:{
@@ -103,7 +103,7 @@ class PlayList extends Component{
 
     componentDidMount(){
         console.log('Component Did Mount')
-        var url="https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4"
+        var url="https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key="
        fetch(url,{
            method:'GET',
            headers:{
