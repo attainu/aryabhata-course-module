@@ -1,5 +1,5 @@
 const base_url = "https://www.googleapis.com/youtube/v3";
-const Api_key= ""
+const Api_key= "AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4"
 
 export function LatestVideo(){
     const output = fetch(`${base_url}/search?part=snippet&key=${Api_key}&chart=mostPopular&maxResults=30`,{method:'GET'})
@@ -48,3 +48,9 @@ export const AUTH_ACTION = {
     LOGIN: 'AUTH_LOGIN',
     LOGOUT: 'AUTH_LOGOUT'
 }
+
+export const PROFILE_ACTION = {
+    SET: 'SET_PROFILE',
+    RESET: 'RESET_PROFILE'
+}
+

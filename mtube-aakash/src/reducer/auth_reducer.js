@@ -5,6 +5,7 @@ const initialState={
     isAuth: false
 }
 
+
 export default function authReducer (state,action){
     state= state || initialState;
     switch(action.type){

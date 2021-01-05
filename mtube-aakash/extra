@@ -1,0 +1,33 @@
+ /*Create*/
+        var playlist = {status: {privacyStatus: "public"}, snippet: {description: "description of playlist", title: "title of playlist"}} 
+        var url = `https://www.googleapis.com/youtube/v3/playlists?part=snippet,status&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4`
+        fetch(url,{
+                    method:'POST',
+                    headers:{
+                        Authorization:`Bearer ${details.token}`,
+                        Accept: "application/json"
+                    },
+                    body:JSON.stringify(playlist)
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data)
+                })
+
+       
+
+//Get playlist
+       var url="https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4"
+       console.log("details.token",details.token)
+       fetch(url,{
+           method:'GET',
+           headers:{
+               Authorization:`Bearer ${details.token}`,
+               Accept: "application/json"
+           }
+       })
+       .then((res) => res.json())
+       .then((data) => {
+           console.log(data)
+       })
+       

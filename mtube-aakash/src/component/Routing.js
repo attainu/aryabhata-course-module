@@ -5,7 +5,8 @@ import SideNav from './SideNavBar';
 import Trending from '../container/Treding';
 import Home from '../container/Home'
 import Footer from './Footer';
-import VideoDetails from '../container/Details'
+import VideoDetails from '../container/Details';
+import Playlist from './playList'
 
 const Routing = () => {
     return(
@@ -19,6 +20,7 @@ const Routing = () => {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/trending" component={Trending}/>
                     <Route exact path="/watch/:id" component={VideoDetails}/>
+                    <Route exact path="/playlist/:id" component={Playlist}/>
                 </div>
             </div>
             <Footer/>
