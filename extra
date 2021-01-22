@@ -1,234 +1,68 @@
-Basic of react
-App with react (full stack)
-
-Login/logout (JWT)
-Login/logout (oAuth)
-
-fullstack with Login
-
-Redux
-Redux fullstack
-
-//////////////////////////////////
-React >>>>>>
-SPA > single page application
-
->>>>>>>>><<<<<<<<<<<<
-class> logical component (data,api,logic,display) heavy
-functional > dumb component (display)    light
-hooks
-
-state > local variable
-props > transfer the data
-
-webpack
-
-
-function test(a,b){
-    var out = [a,b]
-    return out
-}
-
-test(1,3)
-3
-
-
-function add(a,b){
-    return a+b
-}
-
-
-add(1,2)
-
-parent to child => props 
-child to parent => callback function with props
-
-var a = [0,1,2,3]
-
-a.map((data) => {return data*2})
-[0,2,3,6]
-
-a.filter((data) => {return data*2})
-[1, 2, 3]
-
-map always return same length of output array as input array
-map suse to apply logic and iterate
-
-filter may or may not return same length of output array
-filter only return value for which output is true
-
-expect 0 all +ve or -ve are true
-
-var city = ["London", "NewYork", "Dubai", "Helsinki", "Delhi", "Amsterdam"]
-
-city.indexOf('Delhi')
-4
-
-city.indexOf('London')
-0
-
-city.indexOf('Venice')
--1
-city.indexOf('Nice')
--1
-
-function add(a,b){
-    return a+b
-}
-
-var add = function (a,b){return a+b}
-
-add(1,2)
-
-
-var url ="https://github.com/Aakashdeveloper/Angular5-Seed"
-undefined
-url.split('/')
-(5) ["https:", "", "github.com", "Aakashdeveloper", "Angular5-Seed"]
-var out = url.split('/')
-undefined
-out[out.length-1]
-"Angular5-Seed"
-
-var a = "javaScript"
-a.split('')
-(10) ["j", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
-
-(get) hotels>         https://developerfunnel.herokuapp.com/hotels
-(get) hotelwrtcity >  https://developerfunnel.herokuapp.com/hotels?city=6
-(get) hoteldetails >  https://developerfunnel.herokuapp.com/hotelsdetails/1
-(get) onbasisoftrip > https://developerfunnel.herokuapp.com/hotellist/1
-(get) roomfilter >    https://developerfunnel.herokuapp.com/hotellist/1?roomtype=1
-(get) costfilter >    https://developerfunnel.herokuapp.com/hotellist/1?hcost=1000&lcost=500
-(get) cityname >      https://developerfunnel.herokuapp.com/location
-(get) rooms >         https://developerfunnel.herokuapp.com/rooms
-(get) triptype>       https://developerfunnel.herokuapp.com/booking
-(get) bookingdetails> https://developerfunnel.herokuapp.com/allBooking
-(post)placebooking >  https://developerfunnel.herokuapp.com/placeBook
-
-Header
-------
-Home 
-    > Search
-    > Quick Search
-listing
-    > Suggestion
-    > Room filter
-    > Cost filter
-    > listing
-details
-place booking
-booking
---------
-Footer
-
-React-tabs 
-React-slick
-
-
-npm i react-router-dom react-tabs react-slick
-
-
-"10"+1
-"10"+1
-"101"
-"10"-1
-9
-"10"*2
-20
-"10a"-1
-NaN
-"10"-"1"
-9
-
-var a ="a123456bc"
-var b ="12345abc"
-
-
-Math.floor(Math.random()*(max-min))+min
-
-
-Math.floor(Math.random()*(20-1))+1
-
-
-var a = 10
-var b = "my age is "+a 
-var c = `my age is ${a}`
-
-
-const myclick = async () => {
-  // do something
-}
-
-////////////////////////////
-npm i -g json-server
-
-json-server --watch db.json --port 8900
-
-
-//////////////
-
-
-function dbQuery(table){
-    var out = `Select * from ${table}`
-}
-
-
-dbQuery('Student')
-
-npm i redux react-redux prop-types redux-logger
-
-
-you can develop application without redux
-but redux help to manage application more better
-
-
->>>>
-from Home line no 9 we are calling action(actions/actionfile)  with help of proptypes
-action will send data to the (reducer/movies_reducer) now
-reducer is connected to the store on line 5(store/storefile)
-store will pass data to index with the help of provider on line8,9 (index.js)
-now component will recive state from store in (container/home)
-with help to mapStateToProps on line 27-31
-here data is recived and use as a props and pass to display component on line 17 (container/home)
-
-
-npm i redux react-redux redux-logger prop-types redux-promise react-router-dom 
-
-
-GET https://youtube.googleapis.com/youtube/v3/videos?part=snippet&myRating=like&key=AIzaSyBxv-0YitTZAO4BbsLhqE1bIfVR9r0f_kk
-
-https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyBxv-0YitTZAO4BbsLhqE1bIfVR9r0f_kk&chart=mostPopular&maxResults=30
-
-
-GET https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&myRating=like&key=AIzaSyBxv-0YitTZAO4BbsLhqE1bIfVR9r0f_kk
-
-Authorization: Bearer [YOUR_ACCESS_TOKEN]
-Accept: application/json
-
-
-https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDnR-ua29Z4UULwEai8W4vgYg1hkvTCcaM&maxResults=10&q=diljet
-
-https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=cl0a3i2wFcc&key=AIzaSyDnR-ua29Z4UULwEai8W4vgYg1hkvTCcaM
-
-
-https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4&maxResults=10&q=sachin
-
-https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=tMbRu3YkmJo&key=AIzaSyBYi8bOgYIs-97er6A7iTsfU-oWn6aazUQ
-
-///comment of video on basis of video id
-https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=2lfETGiIDf8&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxo
-
-///on basis of id 
-https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=2lfETGiIDf8&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok
-
-
-GET https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4 HTTP/1.1
-
-
-https://youtube.googleapis.com/youtube/v3/playlists?
-        part=snippet,contentDetails
-        &channelId=UCZRdNleCgW-BGUJf-bbjzQg&key=AIzaSyCCjjQ3hJdSDrqgX6CHLoK4R6TndJAxok4
-
-Authorization: Bearer [YOUR_ACCESS_TOKEN]
-Accept: application/json
+NodeJs
+> node is backend javaScript Framework
+
+> single thread non blocking async I/O 
+> convert code direct in byte code
+> Run over V8 Engine
+
+REPL
+> Read Event Print Loop
+
+> IIS (.net)
+> Tomact/Apache(Java)
+> NodeJs(NodeJs)
+
+npm 
+> Node Package Manager
+
+Dependency/Local Dependency
+    > Max Dependency local
+    > They work wrt to particular folder
+Dev Dependency
+    > They work wrt to particular folder
+    > All those that use wrt to only development
+        Need at the time of development
+            Testing
+
+Global Dependency
+    > This installed in the system
+    > We have to install only once
+    > They have to generate or run the app
+    > Need Admin access to install
+    > Very few Dependency will go global
+
+////
+Package.json
+/////
+> Description of app
+> packages
+> scripts
+> meta(author,version)
+
+////////////
+Step To generate Package.json
+/////////////
+> navigate to the folder using cmd
+> npm init
+> answer all question
+> type yes
+
+#Short cut > npm init -y
+
+////////////
+How to install package
+/////////////
+
+#Local
+> npm i packagename
+
+#Dev
+> npm i packagename --save-dev 
+
+#Global
+> Open cmd as Admin
+> npm i -g packagename
+
+os
+http
+fs
