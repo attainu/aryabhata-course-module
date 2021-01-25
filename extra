@@ -66,3 +66,14 @@ How to install package
 os
 http
 fs
+
+Nodemon 
+> forever running
+> continous development
+> npm i -g nodemon
+
+crud
+C > Create (Post)
+R > Read   (get)
+U > update (put)
+D > Delete (delete)
