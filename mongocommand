@@ -1,0 +1,203 @@
+Sql 
+> Structured Data
+
+NoSql(MongoDB)
+> UnStructured Data
+
+Student Table(Sql)
+---------------------------
+RollNo | Hindi | English | Computer
+ 1     | 80    |         |
+ 2     |       | 80      |
+ 3     |   80  |         | 80
+
+Student Table(MongoDB)
+[
+    {
+        rollno:1,
+        Hindi:80
+    },
+    {
+        rollno:2,
+        English:80
+    },
+    {
+        rollno:3,
+        Hindi:80,
+        Computer:80
+    }
+]
+
+Student Table(Sql)
+---------------------------
+Name | Account | Balance | Date
+
+How to setup MongoDB
+
+///
+>>>>> Download MongoDB
+>>>>> Install Mongodb
+
+> create one folder in c drive by the name of 'data'
+> inside data folder create new folder by name of 'db'
+
+c/data/db
+
+> open cmd 
+    > go the folder 
+        c/programmfile/mongodb/4.4/server/bin
+    > type 'mongod '
+        (this will start the mongodb server on port 27017)
+        (while application is running this server have to be running)
+
+> open new cmd
+    > go the folder 
+        c/programmfile/mongodb/4.4/server/bin
+    > type 'mongo'
+        (this will start the mongodb console/commandline)
+        (this is use test the query not required for making application running)
+    
+
+//Mac
+sudo mkdir /data/db
+sudo mongod --dbpath data/db
+
+/////////////////////////////////
+Sql        Vs           NoSql
+Database               Database
+Tables                 Collections
+Row                    document
+SELECT                 Find
+Insert                 Insert
+Update                 Update
+Delete                 Remove
+
+///////////
+(mongod(server) should be running)
+(all these command will run on mongo console)(mongo)
+
+Check Databases
+> show dbs
+
+Go Inside Db
+> use database name
+
+Check all Collections
+> show collections
+
+To find all data from collection
+db.collectionname.find()
+
+Each document have one primary key
+_id 
+> we can provide value to _id (it should be unique)
+> mongo assigned default value to _id ( ObjectId("5fc46dfe86d6788cec5e1bc2"))
+ ObjectId- 12Byte
+ 4 byte - timestamp
+ 5 byte - random value
+ 3 byte - incrementing Counter
+
+Make it readable
+> db.hotels.find().pretty()
+
+///////////////////////
+    How to create db 
+///////////////////////
+use databasename 
+(database will create one you all collection and document)
+
+//////
+Create collection
+/////
+
+db.first.insert({name:"John"})
+db.first.insert({_id:2,name:"Anchal"})
+
+{ "_id" : ObjectId("60123d28a32260e81eebe485"), "name" : "John" }
+{ "_id" : ObjectId("60123d6aa32260e81eebe486"), "name" : "Lisa" }
+{ "_id" : ObjectId("60123d8ba32260e81eebe487"), "name" : "Nikita", "city" : "Paris" }
+{ "_id" : 1, "name" : "Karan", "subject" : "Angular" }
+{ "_id" : 2, "name" : "Anchal" }
+
+
+db.city.insert(
+    [
+       {
+            _id: 1,
+            city_name: "Delhi",
+            city: 1,
+            country_name: "India"
+        },
+        {
+            "_id": 3,
+            "city_name": "Pune",
+            "city": 3,
+            "country_name": "India"
+        },
+        {
+            "_id": 2,
+            "city_name": "Mumbai",
+            "city": 2,
+            "country_name": "India"
+        },
+        {
+            "_id": 4,
+            "city_name": "Chandigarh",
+            "city": 4,
+            "country_name": "India"
+        },
+        {
+            "_id": 5,
+            "city_name": "Goa",
+            "city": 5,
+            "country_name": "India"
+        },
+        {
+            "_id": 6,
+            "city_name": "Manali",
+            "city": 6,
+            "country_name": "India"
+        }
+    ]
+)
+
+db.city.insert({"_id":7,"city_name":"Amsterdam"})
+
+
+////////
+find with condition
+////////
+db.city.find({_id:1})
+{ "_id" : 1, "city_name" : "Delhi", "city" : 1, "country_name" : "India" }
+db.city.find({_id:10})
+
+db.city.find({city_name:"Mumbai"})
+{ "_id" : 2, "city_name" : "Mumbai", "city" : 2, "country_name" : "India" }
+
+db.first.find({_id:ObjectId("60123d28a32260e81eebe485")})
+
+db.city.find()
+db.hotels.count({city_name:"Pune"})
+
+db.hotels.find({cost:{$lt:2000}}).pretty()
+db.hotels.find({cost:{$gt:2000}}).pretty()
+
+db.hotels.find({cost:{$lt:4000,$gt:3000}}).pretty()
+
+/////
+Projection
+/////
+Which all field you want to see 
+the field you want to see set value as 1
+the field you dont want to see set value as 0
+by default with every record you will get _id
+if you dont want set as _id:0
+
+
+db.collection.find({},{})
+first curly bracket is condition
+second curly bracket is projection
+
+db.hotels.find({city_name:"Mumbai"},{name:1,_id:0,cost:1})
+
+db.hotels.find({cost:{$lt:4000,$gt:3000}},{name:1,_id:0,cost:1}).pretty()

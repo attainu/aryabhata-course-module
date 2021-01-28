@@ -77,3 +77,16 @@ C > Create (Post)
 R > Read   (get)
 U > update (put)
 D > Delete (delete)
+
+npm i @babel/core @babel/register @babel/preset-env
+
+npm i -g @aakashdeveloper/create-node-app
+> generate 
+
+0.0.0.0/0
+
+function add(a,b){
+    return a+b
+}
+
+add(1,2)
