@@ -1,12 +1,11 @@
 var express = require('express');
 var app = express();
-var port = 8700;
+var port = process.env.PORT || 8700;
 
 var menu = [
     {link:'/',page:'Home'},
     {link:'/hotel',page:'Hotel'},
-    {link:'/city',page:'City'},
-    {link:'/city',page:'About'}
+    {link:'/city',page:'City'}
 ]
 var hotelRouter = require('./src/routes/HotelRouter')(menu);
 var cityRouter = require('./src/routes/CityRouter')(menu);
