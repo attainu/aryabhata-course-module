@@ -201,3 +201,78 @@ second curly bracket is projection
 db.hotels.find({city_name:"Mumbai"},{name:1,_id:0,cost:1})
 
 db.hotels.find({cost:{$lt:4000,$gt:3000}},{name:1,_id:0,cost:1}).pretty()
+
+/////
+Update
+Upsert(update+insert)
+
+db.collection.update(
+    {_id:'8'},
+    {
+        $set:{
+            first:'de'
+        }
+    },
+    {
+        upsert:true
+    },
+    {
+        multi:true
+    }
+)
+
+db.city.update(
+    {_id:7},
+    {
+        $set:{
+            "_id":9,
+            "city_name":"Rotterdam",
+            "country_name":"Nertherland"
+        }
+    },
+    {
+        upsert:true
+    }
+)
+
+
+db.city.update(
+    {_id:7},
+    {
+        $set:{
+            "country_name":"Nertherland"
+        }
+    },
+    {
+        upsert:true
+    }
+)
+
+db.city.update(
+    {"country_name":"Nertherland"},
+    {
+        $set:{
+           "city_id":9
+        }
+    },
+    {
+        upsert:true,
+        multi:true
+    }
+)
+
+/////
+Delete
+//////
+
+//remove all records
+db.collection.remove({})
+db.collection.deleteOne({})
+db.collection.deleteMany({city:"Delhi"})
+
+//delete collection
+db.first.drop()
+
+//delete database
+use databasename
+db.dropDatabase()

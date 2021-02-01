@@ -103,3 +103,20 @@ user management
 
 .bson 
 .json
+
+
+PostMan 
+crud
+C > Create (Post)
+R > Read   (get)
+U > update (put)
+D > Delete (delete)
+
+CORS 
+> cross origin resource sharing
+> set headers 
+> cors
+
+npm i body-parser cors ejs express mongodb
+//testing
+npm i chai chai-http mocha
