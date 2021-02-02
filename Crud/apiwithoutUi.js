@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongourl = `mongodb://localhost:27017`;
 let dbobj;
-let col_name="users";
+let col_name="users"
 
 //middleware
 //cross origin resource sharing
@@ -17,42 +17,16 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
-//ejs
-app.use(express.static(__dirname+'/public'));
-app.set('views','./src/views');
-app.set('view engine','ejs');
-
 //health Check
-app.get('/health',(req,res) => {
-    res.status(200).send("Health Ok")
-})
-
-//load home page
 app.get('/',(req,res) => {
-    dbobj.collection(col_name).find({isActive:true}).toArray((err,result) => {
-        if(err) throw err;
-        res.render('index',{data:result})
-    })
-})
-
-app.get('/new',(req,res) => {
-    res.render('admin')
+    res.status(200).send("Health Ok")
 })
 
 //postUser
 app.post('/adduser',(req,res)=>{
-    const data = {
-        "name": req.body.name,
-        "city": req.body.city,
-        "phone": req.body.phone,
-        "isActive": req.body.isActive?req.body.isActive:true,
-        "role": req.body.role?req.body.role:'User',
-        "email": req.body.email
-    }
-    dbobj.collection(col_name).insert(data,(err,result) => {
+    dbobj.collection(col_name).insert(req.body,(err,result) => {
         if(err) throw err;
-        //res.status(200).send("Data Added")
-        res.redirect('/')
+        res.status(200).send("Data Added")
     });
 });
 
@@ -97,7 +71,7 @@ app.put('/editUser',(req,res) => {
                 email:req.body.email,
                 city: req.body.city,
                 phone: req.body.phone,
-                isActive:req.body.isActive?true:false,
+                isActive:req.body.isActive,
                 role: req.body.role,
             }
         },(err,result) => {
