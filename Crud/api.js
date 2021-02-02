@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 //health Check
-app.get('/health',(req,res) => {
+app.get('/',(req,res) => {
     res.status(200).send("Health Ok")
 })
 
@@ -57,6 +57,47 @@ app.put('/editUser',(req,res) => {
         },(err,result) => {
             if(err) throw err;
             res.send("Data Updated")
+        }
+    )
+})
+
+//hardDeleteUser
+app.delete('/deleteUser',(req,res) => {
+    let Id = mongo.ObjectID(req.body._id);
+    dbobj.collection(col_name).remove({_id:Id},(err,result) => {
+        if(err) throw err;
+        res.send("Data Deleted")
+    })
+});
+
+//deactivate User(soft Delete)
+app.put('/deactivateUser',(req,res)=>{
+    let Id = mongo.ObjectID(req.body._id);
+    db.collection(col_name).update(
+        {_id:id},
+        {
+            $set:{
+                isActive:false
+            }
+        },(err,result)=> {
+            if(err) throw err;
+            res.send("User Deactivated")
+        }
+    )
+})
+
+//Activate User(soft Delete)
+app.put('/deactivateUser',(req,res)=>{
+    let Id = mongo.ObjectID(req.body._id);
+    db.collection(col_name).update(
+        {_id:id},
+        {
+            $set:{
+                isActive:true
+            }
+        },(err,result)=> {
+            if(err) throw err;
+            res.send("User Activated")
         }
     )
 })
