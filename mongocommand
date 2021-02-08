@@ -4,7 +4,7 @@ Sql
 NoSql(MongoDB)
 > UnStructured Data
 
-Student Table(Sql)
+Student Table(Sql)(mysql,postgress)
 ---------------------------
 RollNo | Hindi | English | Computer
  1     | 80    |         |
@@ -28,7 +28,7 @@ Student Table(MongoDB)
     }
 ]
 
-Student Table(Sql)
+Bank Table(Sql)
 ---------------------------
 Name | Account | Balance | Date
 
@@ -80,7 +80,7 @@ Check Databases
 > show dbs
 
 Go Inside Db
-> use database name
+> use database-name
 
 Check all Collections
 > show collections
@@ -111,13 +111,13 @@ Create collection
 /////
 
 db.first.insert({name:"John"})
-db.first.insert({_id:2,name:"Anchal"})
+db.first.insert({_id:'sgegewfwef34',name:"Anchal"})
 
 { "_id" : ObjectId("60123d28a32260e81eebe485"), "name" : "John" }
 { "_id" : ObjectId("60123d6aa32260e81eebe486"), "name" : "Lisa" }
 { "_id" : ObjectId("60123d8ba32260e81eebe487"), "name" : "Nikita", "city" : "Paris" }
 { "_id" : 1, "name" : "Karan", "subject" : "Angular" }
-{ "_id" : 2, "name" : "Anchal" }
+{ "_id" : 2, "name" : "Anchal" , "url":'http:/ddd"}
 
 
 db.city.insert(
@@ -163,7 +163,7 @@ db.city.insert(
 
 db.city.insert({"_id":7,"city_name":"Amsterdam"})
 
-
+db.city.inse
 ////////
 find with condition
 ////////
@@ -206,27 +206,41 @@ db.hotels.find({cost:{$lt:4000,$gt:3000}},{name:1,_id:0,cost:1}).pretty()
 Update
 Upsert(update+insert)
 
+//only update first record where city is delhi
 db.collection.update(
-    {_id:'8'},
+    {city:'Delhi'},
     {
         $set:{
-            first:'de'
+           timimg:'9-5'
         }
-    },
+    }
+)
+
+//update all record where city is delhi
+db.collection.update(
+    {city:'Delhi'},
     {
-        upsert:true
+        $set:{
+           timimg:'9-5'
+        }
     },
     {
         multi:true
     }
 )
 
+/////Upsert///////
+update + insert
+if condition match it will update record
+if condition does not match it will insert
+
+
 db.city.update(
     {_id:7},
     {
         $set:{
             "_id":9,
-            "city_name":"Rotterdam",
+            "country":"Rotterdam",
             "country_name":"Nertherland"
         }
     },
@@ -276,3 +290,14 @@ db.first.drop()
 //delete database
 use databasename
 db.dropDatabase()
+
+User 
+{
+    _id:ObjectID(),
+    name:'',
+    email:'',
+    phone:'',
+    role:'',
+    isActive:''
+}
+

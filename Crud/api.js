@@ -6,7 +6,8 @@ const MongoClient = mongo.MongoClient
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongourl = `mongodb://localhost:27017`;
-let dbobj;
+let dbobj =  require('./dbconnection');
+
 let col_name="users";
 
 //middleware
@@ -29,10 +30,18 @@ app.get('/health',(req,res) => {
 
 //load home page
 app.get('/',(req,res) => {
-    dbobj.collection(col_name).find({isActive:true}).toArray((err,result) => {
-        if(err) throw err;
-        res.render('index',{data:result})
-    })
+    dbobj(function(err,db){
+        db.collection('users').
+        find({}, function(err, result) {
+         if (err) {
+            console.log(err);
+           return;
+         } 
+         else {
+            return result;
+         }
+    });
+})
 })
 
 app.get('/new',(req,res) => {
@@ -148,10 +157,13 @@ app.put('/activateUser',(req,res)=>{
     )
 })
 
-MongoClient.connect(mongourl,(err,connection) => {
+app.listen(port,(err) => {
+    console.log(`Server is running on port ${port}`)
+})
+/*MongoClient.connect(mongourl,(err,connection) => {
     if(err) console.log(err);
     dbobj = connection.db('aryabhat');
     app.listen(port,(err) => {
         console.log(`Server is running on port ${port}`)
     })
-})
+})*/

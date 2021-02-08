@@ -120,3 +120,127 @@ CORS
 npm i body-parser cors ejs express mongodb
 //testing
 npm i chai chai-http mocha
+
+/////////////////
+async await
+ajax
+promises
+
+http
+run on http server
+Express basis
+Routing(listing,details)
+express middleware
+crud (with db)
+Testing
+Deployment
+mongodb(basic)
+crud(mongodb)
+crud(mongoose)
+crud with react(separate file)
+Caching(Redis)
+isomorphic(running both on same server)
+crud with ejs
+Session&cookies
+Authenticate & Authorise
+User management
+Login(with JWT)
+Login(With Google)(passport)
+Debugging
+Custom middleware
+Image upload
+
+////////////
+payment gateway
+email
+oonodejs
+NodeJs with postgres
+Chatapp
+Email With Node(sendgrid)
+
+---------------
+GraphQl
+Redux
+AWS
+ReactHooks
+
+
+Insert
+Get
+Update
+Delete
+
+Create => post
+Read   => Get
+Update => put/patch
+Delete => delete
+
+Database(store)
+
+SQl  NoSQL
+
+JSON > BSON
+
+JSON >JavaScript Object Notation
+Way to represent data 
+
+var data = [
+    {
+        "name":"John",
+        "class":"Node"
+    },
+    {
+        "name":"Alvin",
+        "class":"React"
+    }
+]
+
+Join
+Relational Database
+
+Non Relational Database
+Nested Collection
+
+{
+    customer_id:1
+    customer_name:'John'
+    film:[
+       film_id:1,
+       film_name:'Avengers',
+       screen_id:1,
+       room:[
+           room_id:1
+           noofseats:10,
+           seats:[
+
+           ]
+       ]
+    ]
+}
+
+lookups
+
+repeating data is more effiecent than joins
+
+/////////////////
+_id
+name:req.body.name,
+                email:req.body.email,
+                city: req.body.city,
+                phone: req.body.phone,
+                isActive:req.body.isActive,
+                role: req.body.role
+
+
+req > request
+    > params (after / { http://localhost:9800/hotel/1})
+    > query  (after ? { http://localhost:9800/hotel?id=1})
+    > body   (we send as body from form or postman)
+res > response
+
+
+params is compulsory
+query params is optional
+
+what ever value recived from params of query params
+they all are string

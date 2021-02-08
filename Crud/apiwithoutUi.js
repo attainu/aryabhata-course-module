@@ -4,14 +4,15 @@ const port = process.env.PORT || 9700;
 const mongo = require('mongodb');
 const MongoClient = mongo.MongoClient
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const mongourl = `mongodb://localhost:27017`;
+//const cors = require('cors');
+const mongourl = "mongodb+srv://dev:mongo123@cluster0.f8vmc.mongodb.net/aryabhat?retryWrites=true&w=majority";
 let dbobj;
 let col_name="users"
 
-//middleware
+
+//middlewareThnaTh
 //cross origin resource sharing
-app.use(cors())
+//app.use(cors())
 
 //parse data for post call
 app.use(bodyParser.urlencoded({extended:true}))
@@ -27,10 +28,18 @@ app.post('/adduser',(req,res)=>{
     dbobj.collection(col_name).insert(req.body,(err,result) => {
         if(err) throw err;
         res.status(200).send("Data Added")
-    });
+    })
 });
 
+
 //getUser
+app.get('/myuser',(req,res) => {
+    dbobj.collection(col_name).find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 app.get('/users',(req,res) => {
     var query = {}
     if(req.query.city && req.query.role){
@@ -49,8 +58,19 @@ app.get('/users',(req,res) => {
     })
 })
 
-//UserDetails
 app.get('/user/:id',(req,res) => {
+    connection(function(err,db){
+        db.collection('ItemsArray').
+        insert([result], function(err, result) {
+         if (err) {
+            console.log(err);
+           return;
+         } 
+         else {
+            return result;
+         }
+    //Close connection
+    });
     var id = mongo.ObjectID(req.params.id)
     var query = {}
     query={_id:id}
@@ -72,7 +92,7 @@ app.put('/editUser',(req,res) => {
                 city: req.body.city,
                 phone: req.body.phone,
                 isActive:req.body.isActive,
-                role: req.body.role,
+                role: req.body.role
             }
         },(err,result) => {
             if(err) throw err;
@@ -117,11 +137,13 @@ app.put('/activateUser',(req,res)=>{
             }
         },(err,result)=> {
             if(err) throw err;
-            res.send("User Activated")
+            console.log(result)
+            res.send(result)
         }
     )
 })
 
+//connecting database to nodejs
 MongoClient.connect(mongourl,(err,connection) => {
     if(err) console.log(err);
     dbobj = connection.db('aryabhat');
@@ -129,3 +151,7 @@ MongoClient.connect(mongourl,(err,connection) => {
         console.log(`Server is running on port ${port}`)
     })
 })
+
+//db.aryabhat.insert({})
+//db.abc.find({_id:'45435'})
+//db.users.find({_id:"ObjectId('6018d54e16e40a7cf53ca498')").pretty()

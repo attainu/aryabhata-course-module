@@ -9,6 +9,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
+app.get('/user',(req,res)=>{
+
+})
 
 //Set Port
 const port = process.env.PORT || '3046';

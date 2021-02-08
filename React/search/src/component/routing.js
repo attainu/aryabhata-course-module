@@ -5,7 +5,8 @@ import Footer from './footer';
 import Home from './Newspage/Home';
 import Post from './Posts/post';
 import PostDetails from './Posts/postdetails';
-import Profile from './Profile/profile'
+import Profile from './Profile/profile';
+import Users from './crud/displayApi'
 
 const Routing = () => {
     return(
@@ -16,6 +17,7 @@ const Routing = () => {
             <Route exact path="/post" component={Post}/>
             <Route path="/post/:topic/" component={PostDetails}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/users" component={Users}/>
            
             <Footer year="2021" month="Jan"/>
         </BrowserRouter>
