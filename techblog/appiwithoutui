@@ -35,17 +35,6 @@ app.get('/health',(req,res) => {
     res.send("Health Ok")
 })
 
-app.get('/',(req,res) => {
-    let errmessage = req.query.errmessage?req.query.errmessage:'';
-    let successmessage = req.query.sucmessage?req.query.sucmessage:'';
-    res.render('login',{errmessage:errmessage,successmessage:successmessage})
-})
-
-app.get('/register',(req,res) => {
-    let errmessage = req.query.errmessage?req.query.errmessage:'';
-    res.render('register',{errmessage:errmessage})
-})
-
 //Register User
 app.post('/register',(req,res) => {
     let user = {
@@ -55,14 +44,13 @@ app.post('/register',(req,res) => {
         role:req.body.role?req.body.role:'user',
         isActive:true
     }
-    dbobj.collection('users').findOne({email:user.email},(err,data) => {
+    dbobj.collection('users').find({email:email},(err,data) => {
         if(data){
-            return res.redirect("/register?errmessage=Email Already Taken Added")  
+            return res.send("Email Already Taken Added")  
         }else{
             dbobj.collection('users').insert(user,(err,data)=>{
                 if(err) throw err;
-                //return res.send("Data Added")
-                res.redirect("/?sucmessage=Successfully Register")  
+                return res.send("Data Added")
             })
         }
     })
@@ -77,7 +65,7 @@ app.post('/login',(req,res) => {
     let count;
     dbobj.collection('users').findOne(user,(err,data) => {
         if(err || !data){
-            return res.send('Invalid Login! Please Try Again')
+            return res.send('Invalid Login! Pleae Try Again')
         }else{
             //save data in session
             /*if(req.session.user.email = data.email){
