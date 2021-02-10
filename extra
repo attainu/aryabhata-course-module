@@ -244,3 +244,22 @@ query params is optional
 
 what ever value recived from params of query params
 they all are string
+
+mongod --dbpath   --port 8977
+
+
+MVC > .net Framework
+
+
+Model
+Controller
+View
+
+title
+Description
+createBy:
+createrId:
+isActive:true
+tags:
+date:
+updatedate:
