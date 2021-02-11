@@ -114,7 +114,8 @@ app.get('/allUsers',(req,res) => {
 //logout
 app.get('/logout',(req,res) => {
     req.session.user = null;
-    return res.send('Logout Success')
+   //return res.send('Logout Success')
+   res.redirect('/')
 })
 
 //model of post

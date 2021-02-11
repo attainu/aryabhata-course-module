@@ -22,6 +22,10 @@ class Profile extends Component{
         if(sessionStorage.getItem('_ltk') == null){
             this.props.history.push('/login')
         }
+
+        if(this.state.user.isloggind==false){
+            
+        }
         sessionStorage.setItem('_rtk',this.state.user.role)
         return(
             <div className="container">

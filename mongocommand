@@ -171,7 +171,7 @@ db.city.find({_id:1})
 { "_id" : 1, "city_name" : "Delhi", "city" : 1, "country_name" : "India" }
 db.city.find({_id:10})
 
-db.city.find({city_name:"Mumbai"})
+db.city.find({city_name:"Mumbai"}).sort({createdOn:-1})
 { "_id" : 2, "city_name" : "Mumbai", "city" : 2, "country_name" : "India" }
 
 db.first.find({_id:ObjectId("60123d28a32260e81eebe485")})

@@ -31,20 +31,21 @@
             </nav>
             <hr/>
             <div class="row">
-                <div class="offset-md-5 col-md-5">
-                    <h2 style="color:red"><%=errmessage%></h2>
+                <div class="col-md-12">
                     <center>
-                        <h2>Hi <%=userdata.name%> Please Add your Post</h2>
+                        <h2>Hi <%=userdata.name%> Please Edit your Post</h2>
                     </center>
                     <hr/>
-                    <form action="/post/addPost" method="POST">
+                    <form action="/post/editPost/<%=data._id%>" method="POST">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input name="title" class="form-control" id="title"/>
+                            <input name="title" class="form-control" id="title"
+                            value="<%=data.title%>"/>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input name="description" class="form-control" id="description"/>
+                            <input name="description" class="form-control" id="description"
+                            value="<%=data.description%>"/>
                         </div>
                         <div class="form-group">
                             <label for="tags">Tag</label>
@@ -55,7 +56,9 @@
                               <option value="Python">Python</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-success">Add Post</button>
+                        <button onClick="this.toggle">True</button>
+                        <p>Created By:<%=data.createBy%> </p>
+                        <button type="submit" class="btn btn-success">Edit Post</button>
                     </form>
                 </div>
             </div>
