@@ -72,6 +72,36 @@ app.post('/register',(req,res) => {
     })
 });
 
+//editUser
+app.put('/edituser',(req,res) => {
+    console.log(req.body)
+    let status;
+    if(req.body.isActive){
+        if(req.body.isActive=='true'){
+            status=true
+        }else{
+            status=false
+        }
+    }else{
+        status=false
+    }
+
+    dbobj.collection('users').update(
+        {_id:mongodb.ObjectID(req.body._id)},
+        {
+            $set:{
+                name:req.body.name,
+                email:req.body.email,
+                role:req.body.role?req.body.role:'user',
+                isActive:status
+            }
+        },(err,result) =>{
+            if(err) throw err;
+            res.send('Data Updates')
+        }
+    )
+});
+
 //login
 app.post('/login',(req,res) => {
     let user={
@@ -101,15 +131,35 @@ app.post('/login',(req,res) => {
 app.get('/allUsers',(req,res) => {
     console.log("session>>>",req.session)
     if(!req.session.user){
-        return res.send('No Session Found! Please Login Again')
+        return res.redirect('/?errmessage=No Session Found! Please Login Again')
     }
-    if(req.session.user.role !=="Admin"){
-        return res.send('You are not allowed here')
+    if(req.session.user.role !=="Admin" && req.session.user){
+        return res.redirect('/post?errmessage=You are Not Admin')
     }
     dbobj.collection('users').find().toArray((err,data)=>{
+        //return res.send(data)
+        res.render('users',{data:data,userdata:req.session.user})
+    })
+});
+
+//usersbyid
+app.get('/userbyid',(req,res) => {
+    console.log("session>>>",req.session)
+    if(!req.session.user){
+        return res.redirect('/?errmessage=No Session Found! Please Login Again')
+    }
+    if(req.session.user.role !=="Admin" && req.session.user){
+        return res.redirect('/post?errmessage=You are Not Admin')
+    }
+    let query ={}
+    if(req.query.id){
+        query={_id:mongodb.ObjectID(req.query.id)}
+    }
+    dbobj.collection('users').findOne(query,(err,data)=>{
         return res.send(data)
     })
 });
+
 
 //logout
 app.get('/logout',(req,res) => {
