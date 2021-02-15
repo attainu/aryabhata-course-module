@@ -6,7 +6,8 @@ const mongodb = require('mongodb');
 const url = "mongodb://localhost:27017";
 var mongoClient = new mongodb.MongoClient(url);
 let dbobj;
-mongoClient.connect((err) => {
+
+mongoClient.connect({},(err) => {
     if(err) throw err;
     dbobj = mongoClient.db('aryablog')
 });

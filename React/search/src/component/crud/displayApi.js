@@ -25,6 +25,9 @@ class UserApi extends Component{
         .then((data) => {
             this.setState({users:data})
         })
+        .catch((err) => {
+            this.setState({error:err})
+        })
     }
 }
 

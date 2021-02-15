@@ -263,3 +263,12 @@ isActive:true
 tags:
 date:
 updatedate:
+
+JWT
+Json Web Token
+
+npm i express body-parser cors express bcryptjs jsonwebtoken mongoose
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMjlmYzU0ODZhZjkxMjVmZTBjNGNiMCIsImlhdCI6MTYxMzM2NTkzMiwiZXhwIjoxNjEzNDUyMzMyfQ.DUiUfC9ND-IVSb2soXLhsh4lkuKuqHGZlatZ4Grb5fQ
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMjlmZmQxNjc3YWFlMjlmMDk1NmZmZCIsImlhdCI6MTYxMzM2NTk5NCwiZXhwIjoxNjEzNDUyMzk0fQ.MQ-g1HJVQn6obB63tQziVzvFWnITaryuSGb9X-uLrm8
