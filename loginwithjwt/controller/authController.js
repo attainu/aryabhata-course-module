@@ -11,7 +11,7 @@ router.use(bodyParser.json())
 
 //getAll User
 router.get('/users',(req,res) => {
-    User.find({},(err,data) => {
+    User.find({},{password:0},(err,data) => {
         if(err) throw err;
         res.send(data)
     })

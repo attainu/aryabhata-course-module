@@ -269,6 +269,36 @@ Json Web Token
 
 npm i express body-parser cors express bcryptjs jsonwebtoken mongoose
 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMjlmYzU0ODZhZjkxMjVmZTBjNGNiMCIsImlhdCI6MTYxMzM2NTkzMiwiZXhwIjoxNjEzNDUyMzMyfQ.DUiUfC9ND-IVSb2soXLhsh4lkuKuqHGZlatZ4Grb5fQ
+npm i ejs express express-session passport passport-google-oauth 
 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMjlmZmQxNjc3YWFlMjlmMDk1NmZmZCIsImlhdCI6MTYxMzM2NTk5NCwiZXhwIjoxNjEzNDUyMzk0fQ.MQ-g1HJVQn6obB63tQziVzvFWnITaryuSGb9X-uLrm8
+npm i ejs express request superagent
+
+
+componentDidMount(){
+        const code = (this.props.location.search).split('=')[1];
+        if(code){
+            let requestData={
+                code:code
+            }
+            console.log("requestData>>>",requestData)
+            fetch('http://localhost:6700/users',{
+                method:'POST',
+                headers:{
+                    'Accept':'application/json',
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then((res)=>res.json())
+            .then((data) =>{
+                var user = data.login;
+                var img = data.avatar_url
+                sessionStorage.setItem('username',user)
+                fetch(url,{method:'GET'})
+                .then((res) => res.json())
+                .then((data)=> this.setState({city:data,username:user,imgurl:img}))
+            })
+        }
+
+        
+    }
