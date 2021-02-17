@@ -274,6 +274,8 @@ npm i ejs express express-session passport passport-google-oauth
 npm i ejs express request superagent
 
 
+https://github.com/Aakashdeveloper/dec_react_eveng/blob/master/thridapp/src/Component/Header.js
+
 componentDidMount(){
         const code = (this.props.location.search).split('=')[1];
         if(code){
@@ -294,11 +296,17 @@ componentDidMount(){
                 var user = data.login;
                 var img = data.avatar_url
                 sessionStorage.setItem('username',user)
-                fetch(url,{method:'GET'})
-                .then((res) => res.json())
-                .then((data)=> this.setState({city:data,username:user,imgurl:img}))
+                this.setState({city:data,username:user,imgurl:img})
             })
         }
 
         
     }
+
+
+/////////
+KEYS *
+get keyname
+set key value 
+del keyname 
+FLUSHDB
