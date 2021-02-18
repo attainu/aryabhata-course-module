@@ -310,3 +310,5 @@ get keyname
 set key value 
 del keyname 
 FLUSHDB
+
+npm i express body-parser express-fileupload
