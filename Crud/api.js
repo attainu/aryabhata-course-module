@@ -48,6 +48,20 @@ app.get('/new',(req,res) => {
     res.render('admin')
 })
 
+//callback
+app.get('/getuser',(req,res) => {
+    dbobj.collection(col_name).find({}).toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//async await
+app.get('/getUser1', async(req,res)=>{
+    let response = await dbobj.collection(col_name).find({}).toArray(err,result);
+    res.send(response)
+})
+
 //postUser
 app.post('/adduser',(req,res)=>{
     const data = {

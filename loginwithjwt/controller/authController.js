@@ -38,7 +38,7 @@ router.post('/register',(req,res)=>{
         if(!data) return res.status(500).send({auth:false, "error":'No user Found Register First'})
         else{
             const passIsValid = bcrypt.compareSync(req.body.password,data.password)
-            if(!passIsValid) return res.status(500).send({"error":'Invalid Password'})
+            if(!passIsValid) return res.status(500).send({auth:false, "error":'Invalid Password'})
 
             //here we are generating token
             //userid,secert,expiretime
