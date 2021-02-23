@@ -23,7 +23,6 @@ cREATE TABLE students(
 
 select * from students
 
-
 create table employee(
 	id SERIAL PRIMARY KEY,
 	name text not Null,
@@ -69,3 +68,5 @@ select * from customers where last_name='Bluth' and gender='F'
 select first_name,gender from customers where gender='M'
 
 select first_name,gender from customers where first_name IN ('George','John','Paul')
+
+
