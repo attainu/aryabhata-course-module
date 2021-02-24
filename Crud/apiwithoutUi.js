@@ -19,9 +19,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 //health Check
+
 app.get('/',(req,res) => {
     res.status(200).send("Health Ok")
 })
+
 
 //postUser
 app.post('/adduser',(req,res)=>{
@@ -69,14 +71,7 @@ app.get('/user/:id',(req,res) => {
          else {
             return result;
          }
-    //Close connection
-    });
-    var id = mongo.ObjectID(req.params.id)
-    var query = {}
-    query={_id:id}
-    dbobj.collection(col_name).findOne(query,(err,result) => {
-        if(err) throw err;
-        res.send(result)
+        });
     })
 })
 
@@ -151,7 +146,3 @@ MongoClient.connect(mongourl,(err,connection) => {
         console.log(`Server is running on port ${port}`)
     })
 })
-
-//db.aryabhat.insert({})
-//db.abc.find({_id:'45435'})
-//db.users.find({_id:"ObjectId('6018d54e16e40a7cf53ca498')").pretty()

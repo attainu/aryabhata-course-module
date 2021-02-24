@@ -316,3 +316,7 @@ npm i express body-parser express-fileupload
 https://www.pgadmin.org/
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 https://stackoverflow.com/questions/36629963/how-can-i-start-postgresql-on-windows
+
+npm i mocha chai chai-http 
+
+psql -d postgres -U postgres 
