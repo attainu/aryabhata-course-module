@@ -1,6 +1,6 @@
 import express from 'express';
 import request from 'request';
-const port = process.env.PORT || 6700;
+const port = process.env.PORT || 7700;
 const app = express();
 
 //static file path

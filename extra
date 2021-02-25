@@ -320,3 +320,7 @@ https://stackoverflow.com/questions/36629963/how-can-i-start-postgresql-on-windo
 npm i mocha chai chai-http 
 
 psql -d postgres -U postgres 
+
+npm i axios express express-graphql graphql
+
+npm i apollo-boost apollo-graphql graphql graphql-tag react-apollo
