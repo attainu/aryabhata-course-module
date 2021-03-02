@@ -324,3 +324,25 @@ psql -d postgres -U postgres
 npm i axios express express-graphql graphql
 
 npm i apollo-boost apollo-graphql graphql graphql-tag react-apollo
+
+function HOc(a,b){
+    return a+b
+}
+
+hoc(1,2)
+
+3
+
+npm i -g create-react-native-app
+create-react-native-app mymobi
+go inside app
+> npm run web
+
+Ec2
+Elastic Bean Stack
+Ci/Cd pipeline
+S3
+SNS 
+cloudwatch
+cloud trail
+lambda

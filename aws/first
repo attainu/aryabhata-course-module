@@ -1,0 +1,24 @@
+on premise -> High Security, Expensive
+cloud => AutoScale, Pay as you go 
+
+IAAS > infra as a service   (EC2)
+(Software,platform,code,space,deployment)
+
+PAAS > platform as service   (Elatsic Bean stack)
+(code,deployment)
+
+SAAS > software as service    (SNS)
+
+
+availablity Zone
+Region
+
+EC2
+Elastic Cloud Compute
+(
+    Virtual Cloud
+) 
+
+pay as you go  > normal
+Reserve > reserve for long time (no frontend, partial upfront ,all upfront) 70%
+Spot> 90%
