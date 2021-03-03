@@ -1,0 +1,8 @@
+/************************
+    Use Windows  as web server
+*************************/
+=> Install IIS
+=> Install-WindowsFeature -name Web-Server -IncludeManagementTools
+=> C:/inetpub/wwwroot/index.html
+=> <h1>Hi welcome</h1>
+=> publicip/ index.html
